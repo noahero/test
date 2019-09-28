@@ -29,4 +29,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+//    compile 'com.yanzhenjie.permission:support:2.0.1'
+    implementation 'com.yanzhenjie.permission:x:2.0.1'
 }
