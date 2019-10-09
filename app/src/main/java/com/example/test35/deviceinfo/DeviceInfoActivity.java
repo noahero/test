@@ -79,17 +79,14 @@ public class DeviceInfoActivity extends AppCompatActivity {
             List<NetworkInterface> all = Collections.list(networkInterfaces);
             for (NetworkInterface nif : all) {
                 if (!nif.getName().equalsIgnoreCase("wlan0")) continue;
-
                 byte[] macBytes = nif.getHardwareAddress();
                 if (macBytes == null) {
                     return null;
                 }
-
                 StringBuilder res1 = new StringBuilder();
                 for (byte b : macBytes) {
                     res1.append(String.format("%02X:", b));
                 }
-
                 if (res1.length() > 0) {
                     res1.deleteCharAt(res1.length() - 1);
                 }
@@ -105,15 +102,17 @@ public class DeviceInfoActivity extends AppCompatActivity {
      * 由蓝牙那边获取设备mac地址，但是这个6.0以后就会变成02:00:00:00:00:00，已经不能正常使用了
      * @return
      */
-    public  String getNewMac1(){
+    public  String getNewMacFromBluetoothAdapter(){
         BluetoothAdapter myDevice = BluetoothAdapter.getDefaultAdapter();
         String deviceName = myDevice.getAddress();
         return deviceName;
     }
 
 
-
-    //获取本地IP
+    /**
+     * 获取wifi内网ip
+     * @return
+     */
     public  String getLocalIpAddress() {
         try {
             for (Enumeration<NetworkInterface> en = NetworkInterface
@@ -196,7 +195,6 @@ public class DeviceInfoActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void getMac1(View view) {
         Log.e("tag1",getNewMac());
-        Log.e("tag2",getNewMac1());
         Log.e("tag4",getLocalIpAddress());
         Log.e("tag5",getLocalIpAddress(this));
         Log.e("tag6",getGPRSIpAddress());
