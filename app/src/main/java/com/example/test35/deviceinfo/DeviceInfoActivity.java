@@ -27,6 +27,31 @@ import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 
+/**
+ *
+ *     String PK_INetIP;//互联网IP(后端系统从request获取)
+ *     String PK_LNetIP;//局域网IP
+ *     String PK_NetType;//当前使用网络（移动数据流量、WIFI）
+ *     String PK_DeviceIp;//设备IP
+ *     String PK_DeviceId;//设备ID(例：iOS 送IDFV)
+ *     String PK_PrisonFlag;//越狱情况
+ *     String PK_FirstInstall;//是否首次安装启动
+ *     String PK_ProxyFlag;//应用之前是否连接过代理网络
+ *     String PK_DeviceInfo;//设备型号
+ *     String PK_SysInfo;//设备系统版本
+ *     String PK_DeviceAlias;//设备别名
+ *     String PK_AppPackage;//当前应用版本
+ *     String PK_LngLat;//经纬度
+ *     String PK_IMEI;//IMEI(安卓)
+ *     String PK_DeviceSeq;//设备序列号(安卓)
+ *     String PK_LoginMobile;//社区金融登录手机号(未登录放空)
+ *     String PK_LoginL;//未登录、已登录社区金融、已登录网银状态
+ *     String PK_IdNo;//用户证件号码
+ *     String PK_CIfNo;//客户号
+ *     String PK_UserLevel;//用户层级
+ *     String PK_SIMInfo;//SIM数量及对应手机号
+ *     String PK_ChannelId;//设备渠道标示(包括:手机银行iOS、手机银行安卓、商户收款iOS、商户收款安卓，例: 0:手机银行iOS、1:手机银行安卓、2:商户收款iOS、3:商户收款安卓 后续新增渠道再添加)
+ */
 public class DeviceInfoActivity extends AppCompatActivity {
 
     @Override
